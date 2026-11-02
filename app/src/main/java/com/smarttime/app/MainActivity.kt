@@ -129,7 +129,7 @@ private fun SmartTimeApp() {
                     "calculator" -> CalculatorScreen()
                     "settings" -> SettingsScreen(userName, sessionToken.isNotBlank(), { userName = it; prefs.edit().putString("user_name", it).apply() }, {
                         sessionToken = ""; prefs.edit().remove("session_token").apply(); userName = "ضيف Smart Time"; notice = "تم تسجيل الخروج من الجلسة المحلية."
-                    }, { route = "home" })
+                    }, { route = "login" })
                     "chat" -> GenericScreen("الدردشة", "واجهة محادثات Smart Time الأصلية تحتاج إلى ربط خدمات الرسائل ومصادقة الخادم.")
                     "ai" -> GenericScreen("مركز الذكاء الاصطناعي", "سيتم توصيل المساعد بخدمة الخادم الحالية دون تضمين مفاتيح سرية داخل التطبيق.")
                     else -> {
